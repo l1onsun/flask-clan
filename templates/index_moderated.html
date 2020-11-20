@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>!hahan't!</title>
+    <meta name="description" content="Simplified Bootstrap template with sticky menu">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/sticky-menu.css" rel="stylesheet">
+    <link href="/static/css/table-style.css" rel="stylesheet">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Welcome</a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Правила</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#whatwedo">Таблица игроков</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Пустота</a>
+                    </li>
+                </ul>
+            </div>	<!-- .navbar-collapse -->
+        </div>		<!-- .container -->
+    </nav>
+    <!-- Welcome   -->
+    <section id="welcome" class="welcome-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--img src="/static/pekka.webp" alt="альтернативный текст"-->
+                    <h1>Добро пожаловать в <b>!hahan't!</b></h1>
+                    <p> Чат в Telegram: <a href="https://t.me/HAHANT_Chat">t.me/HAHANT_Chat</a> </p>
+                    <p> Сайт создан игроками клана для игроков клана! Здесь будут размещены правила, информация об игроках и о войнах. </p>
+                    <p> ВНИМАНЕ! Сайт нахоидится в разработке. Это ранняя версия!</p>
+                    <p></p>
+                    <p> Просьба отписываться в чат клана о пожеланиях, идеях по поводу сайта (об ошибках тоже конечно срочно сообщайте).
+                        Отпишитесь так-же как вы сюда зашли: с компа или с телефона.</p>
+                    <p></p>
+					<ul>
+                         <li>Трофеи клана: 2391</li>
+                         <li>Счёт клана: 43496</li>
+                         <li>Количество игроков: 48/50</li>
+                         <li>Тег клана: #YR98LYRU</li>
+                         <li>Информация обновлена: 4 мая 11:34 мск</li>
+                    </ul>
+
+					<p>&nbsp;</p>
+                    <a class="btn btn-primary page-scroll" href="#about">Правила Клана</a>
+                    <a class="btn btn-primary page-scroll" href="#whatwedo">Таблица Игроков</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- PASTE HERE-->
+                    <h1>Правила клана</h1>
+                    <p>0. Обсуждения и критика политики клана (например этих правил) приветсвуются! Это рабочие, но не окончательные правила.</p>
+                    <p>1. Войны клана обязательны. Пропуск кв 3 раза подряд достаточное основание для кика </p>
+                    <p>2. Звание Старейшина даётся за <b>500</b> пожертвований.
+                    Соруководители так-же могут повышать игроков до Старейшины по своему усмотрению (например за активность)</p>
+                    <p>3. Мат не запрещен. Но запрещены оскорбления игроков. </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What we do Section -->
+    <section id="whatwedo" class="whatwedo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Таблица Игроков</h1>
+                    <p>Обновляется каждые 5 мин.</p>
+                    <h1></h1>
+                    <table class="paleBlueRows">
+						<thead>
+						<tr>
+                            <th>#</th>
+						    <th>ник</th>
+                            <th>lvl</th>
+                            <th>трофеи</th>
+                            <th>пожертв.</th>
+                            <th>получено</th>
+                            <th>онлайн</th>
+                            <th>в клане</th>
+						</tr>
+						</thead>
+                        <tfoot>
+                        <tr>
+                            <td>-1</td>
+                            <td>dart vaider</td>
+                            <td>25</td>
+                            <td>9120</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>online</td>
+                        </tr>
+                        </tfoot>
+						<tbody>
+                        {% for player in players %}
+                        <TR>
+                            <TD>{{player.clanRank}}</TD>
+                            <TD>{{player.name}}</TD>
+                            <TD>{{player.expLevel}}</TD>
+                            <TD>{{player.trophies}}</TD>
+                            <TD>{{player.donations}}</TD>
+                            <TD>{{player.donationsReceived}}</TD>
+                            <TD>{{player.lastSeen}}</TD>
+                            <TD>{{player.delta}}</TD>
+                        </TR>
+                        {% endfor %}
+						</tbody>
+					</table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Тут ещё чё-нить будет</h1>
+                    <p> Сейчас сайт не обновляется автоматически. Поэтому вся информация возможно устаревшая. Скоро будет обнавлятся кажыде 5 мин (или  даже каждую 1 мин). Ещё я совсем не дизайнер, так что с оформлением сайта будет, наверное, сложнее всего.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="/static/js/jquery.easing.min.js"></script>
+    <script src="/static/js/sticky-menu.js"></script>
+
+</body>
+
+</html>
